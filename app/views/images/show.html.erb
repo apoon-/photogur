@@ -1,2 +1,11 @@
 <h1>Images#show</h1>
 <p>Find me in app/views/images/show.html.erb</p>
+
+<%= link_to "Back to Images", images_url %>
+
+<p><%= @image[:title] %>, <%= @image[:artist] %></p>
+<%= image_tag @image.url %>
+
+
+<p><%= link_to "Edit", edit_image_url(@image) %></p>
+<p><%= link_to "Delete", image_destroy_url %></p>

@@ -1,14 +1,22 @@
 Photogur::Application.routes.draw do
-  get "images/index"
-  get "images/show"
-  get "images/edit"
-  get "images/destroy"
-  get "images/update"
-  get "images/create"
+  # get "images/index"
+  # get "images/edit"
+  # get "images/destroy"
+  # get "images/update"
+  # get "images/create"
+
+  get "images" => "images#index"
+  get "images/new" => "images#new"
+  post "images" => "images#create" 
+  get "images/:id" => "images#show", as: "image"  
+  get "images/:id/edit" => "images#edit", as: "edit_image"
+  put "images/:id" => "images#update"
+  get "image/destroy" => "images#destroy"
+
 
   root "images#index"
 
-  resources :images
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

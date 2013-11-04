@@ -2,10 +2,13 @@
 <p>Find me in app/views/images/index.html.erb</p>
 
 <h1> Welcome to Photogur </h1>
-<%= link_to "New", new_image_path %>
+<%= link_to "New", images_new_url %>
 
 <ul>
   <% @images.each do |image| %>
-    <li><img src="<%= image[:url] %>"></li>
-  <% end %>
+    <li><%= image[:title].upcase %></li>
+    <li><%= image[:author] %></li>
+    <li><%= link_to image_tag(image.url), "images/#{image.id}"%>
+    </li>
+  <% end %> 
 </ul>
