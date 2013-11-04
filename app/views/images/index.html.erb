@@ -1,0 +1,11 @@
+<h1>Images#index</h1>
+<p>Find me in app/views/images/index.html.erb</p>
+
+<h1> Welcome to Photogur </h1>
+<%= link_to "New", new_image_path %>
+
+<ul>
+  <% @images.each do |image| %>
+    <li><img src="<%= image[:url] %>"></li>
+  <% end %>
+</ul>
